@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- bs5 -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center flex-column ">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-xl-12 col-md-12">
+                <div class="form mt-3 p-3 bg-light shadow" style="max-width: fit-content ;">
+                    <label for="#" class="form-label mt-2">Enter Name</label>
+                    <input type="text" class="form-control mt-2 name " placeholder="Enter name">
+                    <label for="#" class="form-label mt-2">Enter Gender</label>
+                    <input type="text" class="form-control mt-2 gender" placeholder="Enter gender">
+                    <label for="#" class="form-label mt-2">Enter Age</label>
+                    <input type="number" class="form-control mt-2 age" placeholder="Enter age">
+                    <label for="#" class="form-label mt-2 ">Choose profile</label>
+                    <input type="file" placeholder="choose an image" class="img"><br>
+                    <button type="button" class="submit-btn btn btn-success ">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-xl-12 col-md-12">
+            <table class="table tabel-stripped table-hover align-middle mt-3 table-bordered">
+                <thead>
+                    <tr class="table-dark text-light">
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Profile</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="store_data">
+                    
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    var Btnsubmit=document.querySelector('.submit-btn');
+    var Name=document.querySelector('.name');
+    var gender=document.querySelector('.gender');
+    var age=document.querySelector('.age');
+    var image=document.querySelector('.img');
+    var storedata=document.querySelector('.store_data');
+    const Info=[
+
+    ];
+    Btnsubmit.addEventListener('click',()=>{
+         var Data=''
+        Info.push({Name:Name.value,Gender:gender.value,Age:age.value,Img:image.value})
+       for (const I of Info) {
+        Data+=`
+        <tr>
+            <td>${I.Name}</td>
+            <td>${I.Gender}</td>
+            <td>${I.Age}</td>
+            <td>
+                <img src="${I.Img}" style="width: 70px;height: 70px;border-radius: 50%;" alt="profile">
+            </td>
+            <td>
+                <button class="btn btn-edit btn-warning">Edit</button>
+                <button class="btn btn-delete btn-danger">Delete</button>
+            </td>
+         </tr>`;
+         storedata.innerHTML=Data;
+       }
+       Name.focus();
+       Name.value=''
+       gender.value=''
+       age.value=''
+       img.value=''
+       Info=['']
+      
+    })
+</script>
+</html>

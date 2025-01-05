@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{   
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        height: 100vh;
+    }
+    .btn{
+        width: 200px;
+        height: 50px;
+        background-color: blue;
+        font-size: 20px;
+        border-radius: 15px;
+        border: none;
+    }
+</style>
+<body>
+    <button class="btn">click</button>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+   //in jquery
+   //1
+//    var btn=$('.btn');
+//    btn.click(()=>{
+//     alert(1);
+//    })
+//2
+// $(".btn").click(()=>{
+//     alert(1)
+// })
+//3
+// $(document).on("click",".btn", function () {
+//     alert(1)
+// });
+    var active=1;
+    $(document).on("click",".btn",()=> {
+        if(active==1){
+            $(this).text("Hello js");
+            active=0;
+            $(this).css("backgroundColor","yellow");
+        }
+        else{
+            $(this).text("click me");
+            active=1;
+            $(this).css("backgroundColor","red");
+        }
+    });
+</script>
+</html>

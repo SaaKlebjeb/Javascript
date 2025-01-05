@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form{
+            width:30% ;
+            height: 60%;
+        }
+        button{
+            width: 100%;
+            height: 15%;
+           
+        }
+        p{
+            text-align: center;
+            
+        }
+       
+    </style>
+    <!-- sweet alert cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="form shadow  m-auto p-3 rounded-3">
+        <div class="form-floating mb-4">
+            <input type="text" id="username" class="form-control border-2" placeholder="showing">
+            <label for="username" class="form-label ">Enter Username</label>
+        </div>
+       <div class="form-floating">
+            <input type="password" placeholder="showing" class="form-control border-2" id="password">
+            <label for="password" class="form-label ">Enter Password</label>
+       </div>
+       <button type="button" id="btn" class="btn btn-primary mt-4">Login</button>
+      <p class="mt-4"><a href="#">forgotten password?</a></p>
+    </div>
+</body>
+<script>
+    var username=document.getElementById("username");
+    var pass=document.getElementById("password");
+
+    var btn_log=document.getElementById("btn");
+    btn_log.addEventListener("click",function(){
+        if(username.value=="Raksa"){
+            if(pass.value==281026){
+                window.location.href="watch-shop.html";
+            }
+            else{
+                  if(pass.value==''){
+                    alert("Please enter password...!");
+                  } 
+                  else{
+                    sweetAlert("Incorrect Password...!", "Please try again...!", "error");
+                  }
+            }
+        }
+        else{
+           if(username.value==''){
+            alert("Please enter username...!");
+           }
+           else{
+            sweetAlert("Incorrect Username...!", "Please try again...!", "error");
+           }
+        }
+      
+        username.value='';
+        pass.value='';
+        username.focus();
+    })
+</script>
+</html>

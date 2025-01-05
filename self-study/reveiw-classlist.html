@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .navbar{
+        width: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+    .logo{
+        width: 10%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+        color:white;
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu ul{
+        display: flex;
+        list-style-type: none;
+    }
+    .menu ul li{
+        display: inline;
+        padding: 10px;
+        margin:5px 15px;
+    }
+    .menu ul li a{
+        text-decoration: none;
+        color: white;
+        font-size: 19px;
+    }
+    .sub-menu.active{
+        background-color: green;
+        border-radius: 15px;
+        padding: 15px;
+    }
+    .container{
+        width: 80%;
+        height: 400px;
+        margin: auto;
+        margin-top: 20px;
+        background-color: gray;
+    }
+    .page.home-page{
+        font-size: 20px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        width: 100%;
+        height: 100%;
+        background-color: red;
+    }
+    .page.about-page{
+        width: 100%;
+        height: 100%;
+        background-color: blue;
+        font-size: 20px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+    .page.service-page{
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+        font-size: 20px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+    .page.contact-page{
+        width: 100%;
+        height: 100%;
+        background-color: coral;
+        font-size: 20px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+    .page.active{
+        display: flex;
+    }
+    
+</style>
+<body>
+    <div class="navbar">
+        <div class="logo">Shoes Shop</div>
+        <div class="menu">
+            <ul>
+                <li><a class="sub-menu active"  href="#">Home</a></li>
+                <li><a class="sub-menu " href="#">about</a></li>
+                <li><a class="sub-menu " href="#">service</a></li>
+                <li><a class="sub-menu " href="#">contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div page="Home" class="page home-page active ">Home-page</div>
+        <div page="about" class="page about-page">About-page</div>
+        <div page="service" class="page service-page">Service-page</div>
+        <div page="contact" class="page contact-page">Contact-page</div>
+    </div>
+</body>
+<script>
+    let submenu=document.querySelectorAll('.sub-menu');
+    submenu.forEach((sub,i) => {
+    sub.addEventListener("click",()=>{
+      let SubActive=document.querySelector('.sub-menu.active');
+      SubActive.classList.remove('active')
+      submenu[i].classList.add('active');
+       // make relate page with navbar
+       let Allpage=document.querySelectorAll('.page');
+       for(let j=0;j<Allpage.length;j++){
+        let Namepage=Allpage[j].getAttribute('page').toLowerCase();
+        if(submenu[i].textContent.toLowerCase()===Namepage){
+            let PageActive=document.querySelector('.page.active');
+            PageActive.classList.remove('active');
+            Allpage[i].classList.add('active');
+        }
+       }
+        
+    })
+    });
+   
+
+</script>
+</html>

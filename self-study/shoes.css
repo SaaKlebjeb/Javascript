@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    width: 100%;
+    height: 100vh;
+}
+.navbar{
+    position:sticky !important;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+.collapse .navbar-nav{
+    border-radius: 20px;
+}
+.collapse .navbar-nav .nav-item{
+    border-radius: 18px;
+}
+.collapse .navbar-nav .nav-link{
+    margin: 5px 20px;
+    border-radius: 18px;
+}
+.collapse .navbar-nav .nav-link.active{
+    background-color:white;
+    border-radius: 15px;
+}
+.Homepage{
+    position:relative;
+   width: 100%;
+   height: 100%;
+   display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   background-color:rgba(246, 244, 241, 0.622) ;
+}
+
+.Homepage .about-box{
+    width: 40%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0px;
+}
+.Homepage .about-box p{
+    font-size:30px;
+    font-weight: bold;
+    color: #6a11cb;
+    text-align: center;
+    font-family: "Nerko One", cursive;
+    letter-spacing: 2px;
+}
+.Homepage .about-box p .big{
+    font-size: 40px;
+    color: coral;
+}
+.Homepage .about-box button.click{
+    width: 60%;
+    height: 45px;
+    background-color: blue;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 10%;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.2s linear;
+}
+.Homepage .about-box button.click:hover{
+    scale: 1.03;
+   background-color: chocolate;
+}
+.Homepage .pic-box{
+    width: 40%;
+    height: 50%;
+    margin-bottom: 20px;
+    padding: 10px;
+    margin-bottom: 10%;
+    position: relative;
+    z-index: 1;
+}
+.Homepage .pic-box img{
+    border-radius: 10px;
+    transition: 0.3s linear;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+.Homepage .pic-box img{
+    animation:mymove 1.8s linear 0s infinite alternate-reverse ;
+}
+@keyframes mymove {
+    0%{
+        transform: translateY(-50px);
+        transform: rotate(15deg);
+    }
+    100%{
+        transform: translateY(50px);
+        transform: rotate(-15deg);
+    }
+}
+.Homepage .pic-box img:hover{
+    scale:1.1;
+    cursor: pointer;
+}
+/* form-box and popup */
+.Homepage .pop-up{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.465);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 2;
+}
+.Homepage .pop-up .form-box{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:40%;
+    height:65%;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    border-radius: 20px;
+    backdrop-filter: blur(7px);
+    z-index: 2;
+    padding: 40px;
+}
+/* icon wrong */
+.Homepage .pop-up .form-box a{
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    z-index: 6;
+    top: 8px;
+    right: 8px;
+} 
+.Homepage .pop-up .form-box a i{
+    font-size: 25px;
+    font-size: bold;
+    color: white;
+}
+@media(max-width:1350px){
+    .Homepage .pop-up .form-box{
+        width: 50%;
+        height: 67% !important;
+        padding-top: 20px;
+    }
+}
+@media(max-width:1250px){
+    .Homepage .pop-up .form-box{
+        width: 50%;
+        height:68% ;
+        padding-top: 10px;
+    }
+}
+@media(max-width:1170px){
+    .Homepage .pop-up .form-box{
+        width: 60%;
+        height: 70%;
+        padding-top: 10px;
+    }
+}
+@media(max-width:900px){
+    .Homepage{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .Homepage .about-box{
+        width: 100%;
+        height: 70%;
+        padding-top: 50px;
+    }
+    .Homepage .about-box p{
+        font-size: 25px;
+    }
+    .Homepage .about-box p .big{
+        font-size: 35px;
+    }
+    .Homepage .pic-box{
+        width:50%;
+        height: 60%;
+        margin-bottom:10% ;
+    }
+    .Homepage .pop-up .form-box{
+        width: 60%;
+        height: 72%;
+        padding: 15px;
+    }
+}
+@media(max-width:650px){
+    .Homepage .pic-box{
+        width: 70%;
+        height: 45%;
+    }
+    .Homepage .pop-up .form-box{
+        width: 80%;
+        height:75% ;
+        padding-top: 10px;
+    }
+}

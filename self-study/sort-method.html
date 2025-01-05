@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // const numbers=[5,3,2,8,1,9,4];
+    // let sorted=numbers.sort((a,b)=>a-b);
+    // console.log(sorted);
+    const users = [
+  { name: 'Alice', age: 25 },
+  { name: 'Charlie', age: 17 },
+  { name: 'Bob', age: 19 },
+  { name:'Pedola',age:25},
+  { name:'Kelie',age:13},
+  { name:'Rokie',age:24}
+];
+
+    // users.sort((a,b) =>{
+    //     if(a.name<b.name){
+    //         return -1;
+    //     }
+    //     else if(a.name===b.name){
+    //         return 0;
+    //     }
+    //     else{
+    //         return 1;
+    //     }
+    // });
+    // users.sort((a,b)=> b.name.localeCompare(a.name));
+    users.sort((a,b)=>a.age-b.age);
+    console.log(users);
+    
+</script>
+</html>

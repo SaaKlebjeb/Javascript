@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .btn{
+        width: 100px;
+        height: 50px;
+        border: none;
+        border-radius: 15px;
+        background-color: blue;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <button class="btn">click</button>
+</body>
+<script>
+    const numbers=[1,2,3,4,5];
+    //we want new numbers like this [2,4,6,8,10]
+    const Person=[
+        {
+            name:"Saa",age:25,gender:"male"
+        },
+        {
+            name:"sopheak",age:25,gender:"male"
+        },
+        {
+            name:"Khun neary",age:15,gender:"female"
+        }
+    ]
+    let btn=document.querySelector(".btn");
+        // let result=Person.map((person)=>{
+        //     person.age+=10;
+        //     return person;
+        // })
+        // console.log(result)
+     //   console.log(result)
+        // btn.onclick=()=>{
+        //     alert(result)
+        // }
+        // let result2=Person.map((person)=>{
+        //     return person.name;
+        // })
+        // console.log(result2)
+        // let result=Person.map((person)=>{
+        //     return `{name:${person.name},age:${person.age},gender:${person.gender}}`;
+        // })
+        // console.log(result)
+        let modify= numbers.map(number);
+        function number(num){
+            return num*2;
+        }
+        console.log(modify.toString())
+</script>
+</html>

@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:black;
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li{
+            display: inline;
+            margin: 10px 15px;
+            list-style-type: none;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            color:white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="nav">
+            <ul id="list-of-link">
+               
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    const menu=[
+        {
+            li:"Home",
+        },
+        {
+            li:"About",
+        },
+        {
+            li:"Contact",
+        },
+        {
+            li:"Service",
+        }
+    ]
+   var MenuList=document.getElementById("list-of-link");
+   var store='';
+   for (const m of menu) {
+        store+=`
+                <li><a href="#">${m.li}</a></li>
+        `
+        MenuList.innerHTML=store;
+   }
+</script>
+</html>

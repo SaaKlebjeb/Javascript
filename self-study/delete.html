@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- bs5 -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<style>
+    img{
+        width: 50px ;
+        height: 50px;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+</style>
+<body>
+ <div class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-lg-8">
+            <table class="table align-middle text-center table-bordered table-hover table-striped" style="width:900px;">
+                <tr class="table-dark ">
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+                <tbody class="jab_data">
+                    
+                </tbody>
+            </table>
+        </div>
+ </div>
+  </div>
+</body>
+<script>
+     var jabdata=document.querySelector('.jab_data');
+    const Products=[
+        {id:1,title:"product",price:100,image:"https://contents.mediadecathlon.com/p2393865/59e9499e49d170903fb3c71ddaf67c3a/p2393865.jpg?format=auto&quality=70&f=2520x0"},
+        {id:2,title:"product",price:100,image:"https://i.ebayimg.com/images/g/F-MAAOSwFShjrsMF/s-l1200.jpg"},
+        {id:3,title:"product",price:100,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS614pTOw5N3_iT4BFIqBwBB9gsTC29vAXTKQ&s"},
+        {id:4,title:"product",price:100,image:"https://www.ascotshoes.co.uk/cdn/shop/t/4/assets/slide_10.jpg?v=20395979233767745271605796306"},
+        {id:5,title:"product",price:100,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA5Pyzg9nmkAl4ck1OYgZGDaCy04myEJngHQ&s"},
+        {id:6,title:"product",price:100,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0amMLbeHi134-ikRT8NHtniae3Q1dm2dKiw&s"},
+        {id:7,title:"product",price:100,image:"https://dks.scene7.com/is/image/dkscdn/21NIKWRFRC1RDGLD1FTWA_Denim_Turq_is/?wid=252&hei=252&qlt=85,0&fmt=jpg&op_sharpen=1"},
+        {id:8,title:"product",price:100,image:"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg"},
+        {id:9,title:"product",price:100,image:"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png"},
+        {id:10,title:"product",price:100,image:"https://i.ebayimg.com/images/g/EwwAAOSwRn5jK1mx/s-l1200.jpg"},
+        {id:11,title:"product",price:100,image:"https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/04941968-ad5a-49c5-9324-ff5a7e75a7c3/WMNS+NIKE+GAMMA+FORCE.png"},
+        {id:12,title:"product",price:100,image:"https://i.ebayimg.com/images/g/KuYAAOSwyKpj-p7F/s-l1200.jpg"},
+        {id:13,title:"product",price:100,image:"https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/uirypqqxq83mwcjbf9ej/AIR+MONARCH+IV.png"},
+        {id:14,title:"product",price:100,image:"https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwe076c6bb/nk/a6b/c/5/9/0/c/a6bc590c_60b8_4fcb_b51a_8e4a28c4170c.jpg?sw=520&sh=520&sm=fit"},
+        {id:15,title:"product",price:100,image:"https://dks.scene7.com/is/image/dkscdn/23NIKAGNNSMMRTLTYMNKA_Geo_Teal_Green_Purple_Ink_is/?wid=252&hei=252&qlt=85,0&fmt=jpg&op_sharpen=1"},
+        {id:16,title:"product",price:100,image:"https://images.footlocker.com/is/image/EBFL2/Q8877100?wid=250&hei=250"},
+        {id:17,title:"product",price:100,image:"https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/990b2918-fb2f-43d5-bf14-a7373d3e2a2d/NIKE+COURT+VISION+LO+NN.png"},
+        {id:18,title:"product",price:100,image:"https://di2ponv0v5otw.cloudfront.net/posts/2022/12/20/63a27e65ccff636b40be0123/m_63a27ebc4bd760f5ca718835.jpeg"},
+        {id:19,title:"product",price:100,image:"https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f028724d-74e1-41cf-a1e8-30ad181a05fa/NIKE+AIR+MAX+PULSE+ROAM.png"},
+        {id:20,title:"product",price:100,image:"https://d2ob0iztsaxy5v.cloudfront.net/product/340740/3407407060_zm.jpg"}
+    ];
+    var store="";
+    for (const p in Products) {
+        store+=`
+              <tr>
+                        <td>${Products[p].id}</td>
+                        <td>${Products[p].title}</td>
+                        <td>${Products[p].price}</td>
+                        <td>
+                            <img src="${Products[p].image} alt="pic">    
+                        </td>
+                        <td>
+                            <button type="button" class="btn-delete btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+        `
+        jabdata.innerHTML=store;
+    }
+    var btndelete=document.querySelectorAll('.btn-delete');
+    btndelete.forEach(del => {
+        del.addEventListener("click",()=>{
+            var row = del.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        })
+    });
+</script>
+</html>

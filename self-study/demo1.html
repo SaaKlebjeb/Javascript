@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="#">
+    <label for="score1">score1</label><br>
+    <input type="number" id="score1" ><br>
+    <label for="score2">score2</label><br>
+    <input type="number" id="score2" ><br>
+    <label for="score3">score3</label><br>
+    <input type="number" id="score3" ><br>
+    <label for="score4">score4</label><br>
+    <input type="number" id="score4" ><br>
+    <label for="score5">score5</label><br>
+    <input type="number" id="score5" ><br><br>
+    <label for="total">total</label><br>
+    <input type="number" id="total"><br>
+    <button type="button" id="btn">click</button><br><br>
+    <label for="result">result</label><br>
+    <input type="text"  id="result">
+    <button type="button" id="re_but">result</button>
+</form>
+</body>
+<script>
+    var score1=document.getElementById("score1");
+    var score2=document.getElementById("score2");
+    var score3=document.getElementById("score3");
+    var score4=document.getElementById("score4");
+    var score5=document.getElementById("score5");
+    var click=document.getElementById("btn");
+    var total=document.getElementById("total");
+    var grade=document.getElementById("result");
+    var button=document.getElementById("re_but");
+    var sum=0;
+    click.addEventListener("click",function(){
+        sum=parseInt(score1.value)+parseInt(score2.value)+parseInt(score3.value)+parseInt(score4.value)+
+        parseInt(score5.value);
+        total.value=sum;
+       
+    })
+    button.addEventListener("click",function(){
+        
+        if(total.value>95){
+            grade.innerText="A";
+        }
+        else if(total.value>80 && total.value<=95){
+            grade.innerText="B";
+        }
+        else if(total.value>70 && total.value<=80){
+            grade.innerText="C";
+        }
+        else if(total.value>60 && total.value<=70){
+            grade.innerText="D";
+        }
+        else if(total.value>=50 && total.value<=60){
+            grade.innerText="E";
+        }
+        else{
+            grade.innerText="F";
+        }
+    })
+
+</script>
+</html>

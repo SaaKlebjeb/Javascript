@@ -1,0 +1,225 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- iconcdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+   .bi-heart{
+    font-size: 25px;
+    color: red;
+   }
+   .bi-heart-fill{
+    font-size: 25px;
+    color: red;
+   }
+   .show-products{
+    width: 100%;
+   }
+   .show-products img{
+    width: 100%;
+    height: 60%;
+    background-position: center;
+    object-fit: cover;
+   }
+   .products{
+    width: 25%;
+   
+   }
+   .products .card{
+    width: 90%;
+    height: 100%;
+   }
+   .card-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+   }
+</style>
+<body>
+    <div class="bg-dark p-4 d-flex justify-content-between align-items-center">
+        <h3 class="text-light w-25">jquery Exercise</h3>
+        <input type="search" class="form-control search-products w-50" placeholder="search..">
+        <button type="button" class="btn btn-search btn-primary">search</button>
+    </div>
+    <div class="container mt-3 p-3 ">
+        <div class="row">
+            <div class="products col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 g-3 ">
+                <div class="card mt-3 " style="width:16rem;">
+                    <img src="https://file03.es.c01.co/upload/E478E7F258AC7564/202401/5318441265600681127.jpg" alt="appo">
+                    <div class="card-body">
+                        <h3 class="card-title">vivo V29 5G</h3>
+                        <div class="d-flex justify-content-between align-items-center w-75">
+                            <p>400$</p>
+                            <i class="bi bi-heart heart-icon"></i>
+                            <button class="btn btn-primary btn-view " data-bs-toggle="modal" data-bs-target="#exampleModal">view</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 g-3 ">
+                <div class="card mt-3 " style="width:16rem;">
+                    <img src="https://www.istudio.store/cdn/shop/files/iPhone_16_Pink_PDP_Image_Position_1a_Pink_Color__TH-TH_a0a5036d-ecf3-4216-a250-4f8739521d21.jpg?v=1725929916&width=823" alt="appo">
+                    <div class="card-body">
+                        <h3 class="card-title">iPhone 16</h3>
+                        <div class="d-flex justify-content-between align-items-center w-75">
+                            <p>400$</p>
+                            <i class="bi bi-heart heart-icon"></i>
+                            <button class="btn btn-primary btn-view " data-bs-toggle="modal" data-bs-target="#exampleModal">view</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 g-3 ">
+                <div class="card mt-3 " style="width:16rem;">
+                    <img src="https://iplanet.one/cdn/shop/files/iPhone_15_Pink_PDP_Image_Position-1__en-IN.jpg?v=1695427946" alt="appo">
+                    <div class="card-body">
+                        <h3 class="card-title">iPhone 15</h3>
+                        <div class="d-flex justify-content-between align-items-center w-75 ">
+                            <p>400$</p>
+                            <i class="bi bi-heart heart-icon"></i>
+                            <button class="btn btn-primary btn-view " data-bs-toggle="modal" data-bs-target="#exampleModal">view</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 g-3 ">
+                <div class="card mt-3 " style="width:16rem;">
+                    <img src="https://www.phonemart.ng/wp-content/uploads/2021/04/images-1-13.jpeg.webp" alt="appo">
+                    <div class="card-body">
+                        <h3 class="card-title">iPhone 12</h3>
+                        <div class="d-flex justify-content-between align-items-center w-75">
+                            <p>400$</p>
+                            <i class="bi bi-heart heart-icon"></i>
+                            <button class="btn btn-primary btn-view " data-bs-toggle="modal" data-bs-target="#exampleModal">view</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 g-3 ">
+                <div class="card mt-3 " style="width:16rem;">
+                    <img src="https://2b.com.eg/media/catalog/product/cache/661473ab953cdcdf4c3b607144109b90/a/p/apple_iphone_11-_white_3_1.jpg" alt="appo">
+                    <div class="card-body">
+                        <h3  class="card-title">iPhone 11</h3>
+                        <div class="d-flex justify-content-between align-items-center w-75">
+                            <p>400$</p>
+                            <i class="bi bi-heart heart-icon"></i>
+                            <button type="button" class="btn btn-primary btn-view" data-bs-toggle="modal" data-bs-target="#exampleModal">view</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 g-3 ">
+                <div class="card mt-3 " style="width:16rem;">
+                    <img src="https://images.samsung.com/is/image/samsung/p6pim/levant/sm-a346elgemea/gallery/levant-galaxy-a34-5g-sm-a346-sm-a346elgemea-536768259?$650_519_PNG$" alt="appo">
+                    <div class="card-body">
+                        <h3 class="card-title">Galaxy A34 5G</h3>
+                        <div class="d-flex justify-content-between align-items-center w-75">
+                            <p>400$</p>
+                            <i class="bi bi-heart heart-icon"></i>
+                            <button class="btn btn-primary btn-view " data-bs-toggle="modal" data-bs-target="#exampleModal">view</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 g-3 ">
+                <div class="card mt-3 " style="width:16rem;">
+                    <img src="https://www.okfurniture.co.za/media/catalog/product/cache/e8f115d9d0be6ececabb65b8c44bcadb/2/1/215662_-_332202_nova_11i_green_stacked.png" alt="appo">
+                    <div class="card-body">
+                        <h3 class="card-title">Huawei Nova</h3>
+                        <div class="d-flex justify-content-between align-items-center w-75">
+                            <p>400$</p>
+                            <i class="bi bi-heart heart-icon"></i>
+                            <button class="btn btn-primary btn-view " data-bs-toggle="modal" data-bs-target="#exampleModal">view</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 g-3 ">
+                <div class="card mt-3 " style="width:16rem;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFTISeXAAVVxjwlYViBgkoFdXw-tHmnO5ETg&s" alt="appo">
+                    <div class="card-body">
+                        <h3 class="card-title">Realme C35</h3>
+                        <div class="d-flex justify-content-between align-items-center w-75">
+                            <p>400$</p>
+                            <i class="bi bi-heart heart-icon"></i>
+                            <button class="btn btn-primary btn-view " data-bs-toggle="modal" data-bs-target="#exampleModal">view</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- modal dialog -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">List of Products</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <div class="show-products">
+
+            </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary btn-view " data-bs-toggle="modal" data-bs-target="#exampleModal">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).on('click','.heart-icon', function () {
+        $(this).toggleClass('bi-heart');
+        $(this).toggleClass('bi-heart-fill');
+    });
+    $(document).on('click','.btn-view', function () {
+        let image=$(this).closest(".products").find("img").attr('src');
+        let innerimgae=`
+        <img class="image" src="${image}" alt="" >
+        `
+        $(".show-products").html(innerimgae);
+    });
+    //search products
+    // let searchPro=document.querySelector(".btn-search");
+    let allproducts=document.querySelectorAll('.products');
+    console.log(allproducts)
+    var alltitle=document.querySelectorAll('.card-title')
+    $(document).on('click','.btn-search', function (){
+        let searchPro=$('.search-products').val();
+        for(let i=0;i<allproducts.length;i++){
+            let titleName=alltitle[i].textContent.toLowerCase().replace(/\s+/g,'');
+            if(titleName.includes(searchPro.toLowerCase().replace(/\s+/g,''))){
+              allproducts[i].style.display='block';
+            //   $('.search-products').focus();
+            //   searchPro='';
+            }
+            else{
+                allproducts[i].style.display='none'
+            }
+        }
+        $('.search-products').focus();
+        $('.search-products').val('');
+
+    });
+
+    
+   
+</script>
+</html>

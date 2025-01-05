@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // const numbers=[1,2,3,4,5];
+
+    // let reduced=numbers.reduce((acc,curvalue)=>{
+        //return acc+curvalue;//if acc=0 then it return 0+1=1,1+2=3,3+3=9,...if acc=5 then it return 5+1,...
+    //},0);//0 is define to acc(it meant that acc has value=0)
+    // 
+   /* acc(accomulator): define for the startvalue
+      cur(currentvalue):1,2,3,4,5 this is call current value
+      currentvalue=each element or each object
+   */
+    // console.log(reduced)
+    const cart = [
+  { item: 'Laptop', price: 1000 },
+  { item: 'Phone', price: 500 },
+  { item: 'Headphones', price: 150 },
+  { item: 'Keyboard', price: 100 }
+];
+    let sum=cart.reduce((acc,curvalue) => {
+        acc.push({
+            item:curvalue.item,price:curvalue.price
+        });
+        return acc;
+    },[]);
+    console.log(sum);
+</script>
+</html>

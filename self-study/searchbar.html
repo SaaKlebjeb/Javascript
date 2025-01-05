@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .supersearch{
+            width: 500px;
+            height: 40px;
+            border: 2px solid gray;
+            border-radius:50px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+       .search{
+        width: 90%;
+        height: 100%;
+        border-radius: 50px;
+        padding: 17px;
+        font-size: 15px;
+        border: none;
+        outline: none;
+       }
+       a{
+        width: 10%;
+        height: 100%;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight:800;
+        color: rgba(0, 0, 0, 0.809);
+       }
+    </style>
+</head>
+<body>
+    <div class="supersearch">
+        <input type="search" class="search" placeholder="search">
+        <a href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
+    </div>
+</body>
+</html>

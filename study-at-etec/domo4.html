@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 class="text">Hello HTML</h3>
+    <button type="button" id="btn">click</button>
+</body>
+<script>
+    var text=document.querySelector(".text");
+    document.getElementById("btn").onclick=function(){
+        let colors=["red","blue","yellow","black"];
+        var val="";
+        for(var i=0;i<colors.length;i++){
+            val=val+colors[i]+" ";
+        }
+        text.innerHTML=val;
+    }
+</script>
+</html>

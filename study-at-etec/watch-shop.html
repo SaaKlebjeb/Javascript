@@ -1,0 +1,494 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- sweet alert cdn -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        *{
+          margin:0;
+          padding: 0;
+          box-sizing: border-box;  
+        }
+        body{
+            position: relative;
+        }
+
+        .nav{
+            width: 100%;
+            background-color:brown;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            position: sticky; 
+            top: 0;
+            z-index: 5; 
+        }
+        .nav ul{
+            width: 20%;
+            list-style: none;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav ul li{
+            display: inline;
+            margin-top: 15px;
+        }
+        .nav ul li a{
+            text-decoration: none;
+            color:white;
+            font-size:18px;
+            display: block;
+            margin: 0px 15px;
+            font-weight: 500;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .shop{
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .shop a{
+            display: block;
+            font-size: 18px;
+            position: relative;
+        }
+    
+        .count{
+            position: absolute;
+            width: 16px;
+            height: 14px;
+            padding: 3px;
+            border-radius: 20px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 6px;
+            right:13%;
+            background-color: red;
+            color: white;
+            
+        }
+         .side_bar{
+            /* position: absolute; */
+            position: fixed;
+            width:40%;
+             height:70%;
+            right: -100%;
+            top:58px;
+            background-color: gray;
+            z-index: 2;
+            transition: 0.8s;
+            overflow: scroll;
+        } @media (max-width:1200px){
+            .side_bar{
+                min-width: 45%;
+            }
+            .btn{
+                margin: 5px;
+            }
+            .card{
+                min-height: 455px;
+            }
+            .form{
+                min-width: 500px;
+                
+            }
+        }
+        @media (max-width:1000px){
+            .side_bar{
+                min-width: 46%;
+            }
+        }
+         @media (max-width:950px){
+            .side_bar{
+                min-width: 47%;
+            }
+        }
+        @media (max-width:850px){
+            .side_bar{
+                min-width: 53%;
+            }
+        }
+        @media (max-width:800px){
+            .side_bar{
+                min-width: 55%;
+            }
+        }
+        @media (max-width:750px){
+            .side_bar{
+                min-width: 65%;
+            }
+        }
+        @media (max-width:700px){
+            .side_bar{
+                min-width: 75%;
+            }
+        }
+       
+        @media (max-width:576px){
+            .nav ul li a{
+                display: none;
+            }
+            .shop{
+                width: 100%;
+                height: 100%;
+            }
+            .shop a{
+                text-align: center;
+                margin-top: -10px;
+                margin-bottom: 20px;
+                font-size: 25px;
+            }
+            .side_bar{
+                min-width: 100%;
+                height: 50%;
+                right: -100%;
+                overflow-y: scroll;
+            }
+            .count{
+                right: 46%;
+            }
+            button.btn{
+                width: 100px;
+                margin: 5px;
+            }
+                        
+        }
+        @media (max-width:500px){
+           .card{
+            max-width: 200px;
+           }
+           .card-text{
+            line-height: 18px;
+           }
+           .card-body{
+            line-height: 5px;
+           }
+
+        }
+        .payment{
+            margin-top: 0;
+            width: 100%;
+            height: auto;
+            background-color:green;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .payment p{
+            margin-top: 15px;
+        }
+        .form{
+            width: 40%;
+            height: 25%;
+            position: absolute;
+            z-index: 4;
+            top: 15%;
+            right: 30%;
+        }
+        .form .wrong-icon{
+            position: absolute;
+            top: 5px;
+            right:0px;
+        }
+        .form .wrong-icon a{
+            text-decoration: none;
+            padding: 5px;
+        }
+        .form .wrong-icon a i{
+            font-size: 30px;
+            color: white;
+        }
+        .form button{
+            width: 100%;
+            height: 15%;
+           
+        }
+        .form p{
+            text-align: center;
+            
+        }
+        .pop-up{
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.46);
+            display: none;
+            transition: 0.8s;
+            display: flex;
+            justify-content: cente;
+            align-items: center;
+           
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="pop-up" id="pop">
+        <div class="form shadow bg-black m-auto p-3 rounded-3" id="form">
+            <div class="wrong-icon">
+                <a href="#"><i class="fa-regular fa-circle-xmark"></i></a>
+            </div>
+            <div class="form-floating mt-4">
+                <input type="text" id="username" class="form-control border-2" placeholder="showing">
+                <label for="username" class="form-label ">Enter Username</label>
+            </div>
+           <div class="form-floating mt-4">
+                <input type="password" placeholder="showing" class="form-control border-2 " id="password">
+                <label for="password" class="form-label ">Enter Password</label>
+           </div>
+           <button type="button" id="btn" class="btn btn-primary mt-4 ">Login</button>
+          <p class="mt-4"><a href="#">forgotten password?</a></p>
+        </div>
+    </div> -->
+    <div class="nav" >
+        <ul id="list-of-link">
+           
+        </ul>
+        <div class="shop">
+            <div class="count"> </div>
+            <a id="shop-icon" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </div>
+    <div class="side_bar">
+        <table class="table text-center table-hover table-striped align-middle table-bordered">
+            <tr class="table-dark position-sticky z-3 top-0">
+                <th>ID</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Picture</th>
+                <th>Action</th>
+            </tr>
+            <tbody id="store_data">
+    
+            </tbody>
+        </table>
+        <tfoot>
+            <div class="payment">
+                <p>Total Price:</p>
+                <p id="t-pay"> </p>
+            </div>
+        </tfoot>
+    </div>
+    <div class="container mb-5">
+        <div class="row " id="store_card">
+ 
+        </div>
+     </div>
+</body>
+<script>
+    // const menu=["Home","About","contact","others"];
+    const menu=[
+        {
+           name:"Home",color:"blue"
+        },
+        {
+            name:"About",color:"green"
+        },
+        {
+            name:"contact",color:"yellow"
+        },
+        {
+           name:"others",color:"white"
+        }
+    ]
+    var List=document.getElementById("list-of-link");
+    var Li='';
+    for(const m in menu){
+        Li+=` <li><a style="color:${menu[m].color}" href="#">${menu[m].name}</a></li>`
+    }
+    List.innerHTML=Li;
+
+
+
+    var row=document.getElementById("store_card");
+    const Products=[
+        {
+            id:1,title:"product1",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"340$",
+            image:"https://i5.walmartimages.com/seo/Apple-Watch-Series-7-GPS-Cellular-45mm-Blue-Aluminum-Case-with-Abyss-Blue-Sport-Band-Regular_29f1d121-44ce-4b96-9e09-727a35298995.1a0ac15e4b691e158a0c52b07d70e5ea.jpeg",
+        },
+        {
+            id:2,title:"product2",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"410$",
+            image:"https://media.very.co.uk/i/very/VPWD1_SQ1_0000000020_BLUE_SLf",
+        },
+        {
+            id:3,title:"product3",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"500$",
+            image:"https://images.vodafone.co.uk/gbnnsauqav4t/6Jn6sa157RO7n6zXXxM5pN/0525fd9ac98e8962605442f4530db3db/AW_Ultra2_49mm_TI_Ocean_Band_orange-full-product-front-600.png",
+        },
+        {
+            id:4,title:"product4",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"320$",
+            image:"https://assets1.cbsnewsstatic.com/hub/i/r/2022/10/12/b26f5fae-0016-4116-a805-7bc271bfb53f/thumbnail/640x640/e721cf136beb2bcdf7e18577b599928f/apple-watch-45.jpg?v=25685eaa472b1a5dbb5bd46ae506d232",
+        },
+        {
+            id:5,title:"product5",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"1200$",
+            image:"https://www.machines.com.my/cdn/shop/products/iPhone_15_Pro_Max_Blue_Titanium_PDP_Image_Position-1__GBEN_20551a22-d5a4-4663-93b1-99ba46739c7a.jpg?v=1705481369&width=1445",
+        },
+        {
+            id:6,title:"product6",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"1100$",
+            image:"https://powermaccenter.com/cdn/shop/files/iPhone_13_Pink_PDP_Image_Position-1A__en-US_ff5f581b-f8ee-423e-99ec-f4d2835d55ec.jpg?v=1692028791",
+        },
+        {
+            id:7,title:"product7",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"1320$",
+            image:"https://inventstore.in/wp-content/uploads/2023/04/Purple-scaled.webp",
+        },
+        {
+            id:8,title:"product8",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"1500$",
+            image:"https://media.wired.com/photos/6332360740fe1e8870aa3bc0/3:2/w_2400,h_1600,c_limit/iPhone-14-Review-Gear.jpg",
+        },
+        {
+            id:9,title:"product9",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"2500$",
+            image:"https://www.ione.com.kh/wp-content/uploads/2022/10/ROSA_iPad_Pro_Wi-Fi_11_in_4th_Gen_Space_Gray_PDP_Image_Position-1b-scaled.jpg",
+        },
+        {
+            id:10,title:"product10",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"1490$",
+            image:"https://mac-center.com.pr/cdn/shop/files/iPad_Pro_13_M4_WiFi_Space_Black_PDP_Image_Position_1b__en-US_aaa8460b-d846-4e89-8248-f5c027463d65.jpg?v=1716470683&width=1445",
+        },
+        {
+            id:11,title:"product11",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"1230$",
+            image:"https://i5.walmartimages.com/seo/2021-Apple-12-9-inch-iPad-Pro-Wi-Fi-128GB-Space-Gray-5th-Generation_fc75a562-c0c2-468b-9e74-3e49d9aa1b85.ba1872fcf55df8fcb81e8e4a7788a3ef.jpeg",
+        },
+         {
+            id:12,title:"product12",des:"Some quick example text to build on the card title and make up the bulk of the card's content.",price:"1199$",
+            image:"https://static.esrgear.com/wp-content/uploads/2022/09/iPad-Pro-12.9-Rebound-Magnetic-Case-2-1.jpg",
+        }
+    ]
+    var card="";
+    for(const pro of Products){
+        card+=`
+        <div class="lala col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 g-3 row-gap-sm-3">
+             <div class="card  p-1 object-fit-cover" style="height:440px;line-height:19px;">
+                <img style="height:50%;object-fit:cover" src="${pro.image}" alt="car">
+                <div class="card-body">
+                  <h5 class="card-title">${pro.title}</h5>
+                  <p>${pro.price}</p>
+                  <p class="card-text">${pro.des}</p>
+                  <a href="#" class="btn btn-primary" id="btn-add">Add to card</a>
+                </div>
+              </div>
+        </div>  
+        `;
+    }
+    row.innerHTML=card;
+
+    var Iconshop=document.getElementById("shop-icon");
+    var i=1;
+    Iconshop.addEventListener("click",function(){
+       if(i==1){
+        document.querySelector(".side_bar").style.right=0;
+        countvalue='';
+        document.querySelector(".count").innerHTML=countvalue;
+        i=0;
+       }
+       else{
+        document.querySelector(".side_bar").style.right="-100%";
+        countvalue='';
+        document.querySelector(".count").innerHTML=countvalue;
+        i=1;
+       }
+    })
+    
+    
+
+    var btnadd=document.querySelectorAll("#btn-add");
+    var countvalue=1;
+    var Storedata=document.getElementById("store_data");
+    var payment=document.querySelector(".payment");
+    // 
+    var Totalpay=document.getElementById("t-pay");
+    var sum=0;
+    var store='';
+    btnadd.forEach((btn,i) => {
+        btn.addEventListener("click",function(){
+             store+=`
+                <tr>
+                    <td>${Products[i].id}</td>
+                    <td>${Products[i].title}</td>
+                    <td>${Products[i].price}</td>
+                    <td>
+                        <img class="rounded-2 object-fit-cover" src="${Products[i].image}" style="width:60px;height:60px" alt="">
+                    </td>
+                    <td>
+                        <button type="button" class="btn bg-warning" id="cancel">Cancel</button>
+                        <button type="button" class="btn bg-success" id="buy">Buy now</button>
+                    </td>    
+                </tr>
+            `;
+            // cancel or buy
+           
+            sum+=parseFloat(Products[i].price);
+            Totalpay.innerHTML=sum+"$";
+            // pop-up
+            var pop_up=document.getElementById("pop");
+            var form=document.getElementById("form");
+             pop_up.style.display="block";
+             form.style.display="block";
+             form.style.width="40%";
+            // form.style.height="25%";
+            //  pop_up.addEventListener("click",function(){
+            //     form.style.display="none";
+            //     pop_up.style.display="none";
+            //  })
+
+             document.querySelector(".fa-regular").onclick=function(){
+                form.style.display="none";
+                pop_up.style.display="none";
+             }
+            //  login button
+            var username=document.getElementById("username");
+             var pass=document.getElementById("password");
+             var btn_log=document.getElementById("btn");
+            
+             btn_log.addEventListener("click",function(){
+                   if(username.value=="Raksa"){
+                       if(pass.value==281026){
+                // 
+                Storedata.innerHTML=store;
+                form.style.display="none";
+                pop_up.style.display="none";
+                document.querySelector(".count").innerHTML=countvalue;
+                countvalue++;
+                username.value='';
+                pass.value='';
+            }
+            else{
+                  if(pass.value==''){
+                    alert("Please enter password...!");
+                  } 
+                  else{
+                    sweetAlert("Incorrect Password...!", "Please try again...!", "error");
+                  }
+             }
+             }
+        else{
+           if(username.value==''){
+            alert("Please enter username...!");
+           }
+           else{
+            sweetAlert("Incorrect Username...!", "Please try again...!", "error");
+           }
+        }
+
+
+        // username.value='';
+        // pass.value='';
+        username.focus();
+
+      
+       
+        })
+    
+
+        });
+   
+    })
+</script>
+</html>
