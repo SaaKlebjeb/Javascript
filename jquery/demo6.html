@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        .btn{
+            margin-top: 30px;
+            width: 150px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 17px;
+            background-color: rgba(0, 0, 255, 0.791);
+            border: none;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn:hover{
+            transform: scale(1.07);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="store-img">
+        <img class="img" src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_2x3.jpg" alt="">
+    </div>
+    <button class="btn">click me</button>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    
+    $(document).ready(function () {
+        $(document).on('mouseenter','.img', function () {
+            $(this).attr('src','https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg')
+        });
+        $(document).on('mouseleave','.img', function () {
+            $(this).attr('src','https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_2x3.jpg')
+        });
+        //click
+
+    });
+</script>
+</html>
